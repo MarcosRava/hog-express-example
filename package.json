@@ -7,7 +7,8 @@
     "node": "~6.3.x"
   },
   "scripts": {
-    "start": "npm run build && node build",
+    "start2": "nodemon build --watch src --exec 'npm run build && node build'",
+    "start": "nodemon build --watch src --exec './node_modules/.bin/babel-node src/index.js'",
     "dev": "nodemon --exec 'npm run lint && npm run test-es6' -i build ",
     "test": "npm run lint && npm run build && NODE_PATH=./build npm run test-mocha",
     "test-mocha": "mocha --compilers js:babel-register",
@@ -15,7 +16,7 @@
     "postinstall": "npm run check-dependencies",
     "check-dependencies": "nsp check",
     "lint": "eslint src test",
-    "build": "mkdir -p build && NODE_PATH=./build babel src --out-file build/index.js"
+    "build": "mkdir -p build && NODE_PATH=./build babel src --out-dir build"
   },
   "config": {
     "pre-git": {

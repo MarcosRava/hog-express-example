@@ -1,7 +1,7 @@
 import HOG from 'hog-routes';
 import { Types } from 'betelgeuse';
-import MilliwayDish from 'models/MilliwaysDish';
-import ResponseError from 'models/ResponseError';
+import MilliwayDish from './models/MilliwaysDish';
+import ResponseError from './models/ResponseError';
 
 
 const route = new HOG({use:'express', validations:true, json: true, errors: ResponseError});

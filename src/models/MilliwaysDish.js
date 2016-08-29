@@ -1,6 +1,6 @@
 import Betelgeuse, { Types } from 'betelgeuse';
-import Category from 'models/Category';
-import Tag from 'models/Tag';
+import Category from './Category';
+import Tag from './Tag';
 
 export default class MilliwaysDish extends Betelgeuse {
   static schema = {
